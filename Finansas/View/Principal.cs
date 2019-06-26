@@ -16,5 +16,23 @@ namespace View
         {
             InitializeComponent();
         }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            cliente.Visible = true;
+        }
+
+        private void btnContaPagar_Click(object sender, EventArgs e)
+        {
+            ContaPagar pagar = new ContaPagar();
+            pagar.Visible = true;
+        }
+
+        private void btnContaReceber_Click(object sender, EventArgs e)
+        {
+            ContaReceber receber = new ContaReceber();
+            receber.Visible = true;
+        }
     }
 }
