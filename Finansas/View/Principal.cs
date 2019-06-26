@@ -19,7 +19,7 @@ namespace View
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
+            lblId cliente = new lblId();
             cliente.ShowDialog();
         }
 

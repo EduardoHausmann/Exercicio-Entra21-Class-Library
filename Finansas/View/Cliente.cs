@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class Cliente : Form
+    public partial class lblId : Form
     {
-        public Cliente()
+        public lblId()
         {
             InitializeComponent();
         }
