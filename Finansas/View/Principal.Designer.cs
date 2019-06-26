@@ -58,7 +58,7 @@
             // btnCliente
             // 
             this.btnCliente.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCliente.Location = new System.Drawing.Point(78, 83);
+            this.btnCliente.Location = new System.Drawing.Point(73, 99);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(90, 52);
             this.btnCliente.TabIndex = 2;
@@ -70,6 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(253, 163);
             this.Controls.Add(this.btnCliente);
             this.Controls.Add(this.btnContaReceber);
