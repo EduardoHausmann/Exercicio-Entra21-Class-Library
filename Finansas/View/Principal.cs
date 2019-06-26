@@ -20,19 +20,19 @@ namespace View
         private void btnCliente_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
-            cliente.Visible = true;
+            cliente.ShowDialog();
         }
 
         private void btnContaPagar_Click(object sender, EventArgs e)
         {
             ContaPagar pagar = new ContaPagar();
-            pagar.Visible = true;
+            pagar.ShowDialog();
         }
 
         private void btnContaReceber_Click(object sender, EventArgs e)
         {
             ContaReceber receber = new ContaReceber();
-            receber.Visible = true;
+            receber.ShowDialog();
         }
     }
 }
