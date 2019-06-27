@@ -78,6 +78,9 @@
     <EmbeddedResource Include="ContasPagar.resx">
       <DependentUpon>ContasPagar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContasReceber.resx">
+      <DependentUpon>ContasReceber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>

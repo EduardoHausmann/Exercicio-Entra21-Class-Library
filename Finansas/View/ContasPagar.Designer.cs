@@ -106,7 +106,7 @@
             this.btnApagar.Location = new System.Drawing.Point(548, 12);
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(100, 39);
-            this.btnApagar.TabIndex = 24;
+            this.btnApagar.TabIndex = 7;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
             this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
@@ -117,7 +117,7 @@
             this.btnEditar.Location = new System.Drawing.Point(442, 12);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 39);
-            this.btnEditar.TabIndex = 23;
+            this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -128,7 +128,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(12, 217);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 39);
-            this.btnSalvar.TabIndex = 22;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -169,7 +169,7 @@
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(121, 27);
             this.cbTipo.Sorted = true;
-            this.cbTipo.TabIndex = 18;
+            this.cbTipo.TabIndex = 3;
             // 
             // lblTipo
             // 
@@ -188,7 +188,7 @@
             this.mtbValor.Mask = "999.99";
             this.mtbValor.Name = "mtbValor";
             this.mtbValor.Size = new System.Drawing.Size(100, 26);
-            this.mtbValor.TabIndex = 16;
+            this.mtbValor.TabIndex = 2;
             // 
             // lblValor
             // 
@@ -206,7 +206,7 @@
             this.txtNome.Location = new System.Drawing.Point(12, 31);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(121, 26);
-            this.txtNome.TabIndex = 14;
+            this.txtNome.TabIndex = 1;
             // 
             // lblNome
             // 
@@ -234,7 +234,7 @@
             this.txtBusca.Location = new System.Drawing.Point(216, 26);
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(170, 26);
-            this.txtBusca.TabIndex = 27;
+            this.txtBusca.TabIndex = 8;
             this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
             // dtpData
@@ -244,7 +244,7 @@
             this.dtpData.Location = new System.Drawing.Point(10, 185);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(123, 26);
-            this.dtpData.TabIndex = 28;
+            this.dtpData.TabIndex = 4;
             // 
             // ContasPagar
             // 

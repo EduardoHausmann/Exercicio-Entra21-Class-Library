@@ -21,7 +21,7 @@ DROP TABLE IF EXISTS clientes;
 CREATE TABLE clientes(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
-	cpf VARCHAR(20),
+	cpf VARCHAR(14),
 	data_nascimneto DATE,
-	rg VARCHAR(20)
+	rg VARCHAR(9)
 );
