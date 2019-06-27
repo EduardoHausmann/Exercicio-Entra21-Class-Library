@@ -52,7 +52,7 @@ namespace View
             contaPagar.Nome = txtNome.Text;
             contaPagar.Valor = Convert.ToDecimal(mtbValor.Text);
             contaPagar.Tipo = cbTipo.SelectedItem.ToString();
-            contaPagar.DataVencimento = Convert.ToDateTime(mtbDataVencimento.Text);
+            contaPagar.DataVencimento = Convert.ToDateTime(mtbDataVencimento.ToString());
 
             ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
             repositorio.Inserir(contaPagar);
@@ -82,6 +82,47 @@ namespace View
                     contaPagar.Id, contaPagar.Nome, contaPagar.Valor.ToString(), contaPagar.Tipo, contaPagar.DataVencimento.ToString()
                 });
             }
+        }
+
+        private void ContasPagar_Load(object sender, EventArgs e)
+        {
+            AtualizarTabela();
+        }
+
+        private void txtBusca_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AtualizarTabela();
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
+
+            int id = Convert.ToInt32(dgvContaPagar.CurrentRow.Cells[0].Value);
+            ContaPagar contaPagar = repositorio.ObterPeloId(id);
+            if (lblId != null)
+            {
+                txtNome.Text = contaPagar.Nome;
+                mtbDataVencimento.Text = contaPagar.DataVencimento.ToShortDateString();
+                mtbValor.Text = contaPagar.Valor.ToString("000.00");
+                cbTipo.Text = contaPagar.Tipo.ToString();
+            }
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Desejá realmente Apagar?", "AVISO", MessageBoxButtons.YesNo);
+
+            if (resultado == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(dgvContaPagar.CurrentRow.Cells[0].Value);
+                ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
+                repositorio.Apagar(id);
+                AtualizarTabela();
+            }            
         }
     }
 }

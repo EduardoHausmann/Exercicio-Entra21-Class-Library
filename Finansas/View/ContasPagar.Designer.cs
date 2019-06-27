@@ -65,6 +65,7 @@
             this.dgvContaPagar.Location = new System.Drawing.Point(154, 57);
             this.dgvContaPagar.Name = "dgvContaPagar";
             this.dgvContaPagar.ReadOnly = true;
+            this.dgvContaPagar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContaPagar.Size = new System.Drawing.Size(494, 199);
             this.dgvContaPagar.TabIndex = 25;
             // 
@@ -77,6 +78,7 @@
             this.btnApagar.TabIndex = 24;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnEditar
             // 
@@ -87,6 +89,7 @@
             this.btnEditar.TabIndex = 23;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnSalvar
             // 
@@ -210,6 +213,7 @@
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(170, 26);
             this.txtBusca.TabIndex = 27;
+            this.txtBusca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBusca_KeyDown);
             // 
             // ColumnId
             // 
@@ -264,6 +268,7 @@
             this.Controls.Add(this.lblNome);
             this.Name = "ContasPagar";
             this.Text = "ContaPagar";
+            this.Load += new System.EventHandler(this.ContasPagar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContaPagar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
