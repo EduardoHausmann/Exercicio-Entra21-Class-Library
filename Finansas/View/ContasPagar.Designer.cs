@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.dgvContaPagar = new System.Windows.Forms.DataGridView();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataVencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnApagar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
-            this.mtbDataVencimento = new System.Windows.Forms.MaskedTextBox();
             this.lblDataVencimento = new System.Windows.Forms.Label();
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.lblTipo = new System.Windows.Forms.Label();
@@ -43,11 +47,7 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.lblBusca = new System.Windows.Forms.Label();
             this.txtBusca = new System.Windows.Forms.TextBox();
-            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataVencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContaPagar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +68,37 @@
             this.dgvContaPagar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContaPagar.Size = new System.Drawing.Size(494, 199);
             this.dgvContaPagar.TabIndex = 25;
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Código";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Width = 50;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "Nome";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            // 
+            // ColumnValor
+            // 
+            this.ColumnValor.HeaderText = "Valor";
+            this.ColumnValor.Name = "ColumnValor";
+            this.ColumnValor.ReadOnly = true;
+            // 
+            // ColumnTipo
+            // 
+            this.ColumnTipo.HeaderText = "Tipo";
+            this.ColumnTipo.Name = "ColumnTipo";
+            this.ColumnTipo.ReadOnly = true;
+            // 
+            // ColumnDataVencimento
+            // 
+            this.ColumnDataVencimento.HeaderText = "Data Vencimento";
+            this.ColumnDataVencimento.Name = "ColumnDataVencimento";
+            this.ColumnDataVencimento.ReadOnly = true;
             // 
             // btnApagar
             // 
@@ -111,15 +142,6 @@
             this.lblId.Size = new System.Drawing.Size(0, 19);
             this.lblId.TabIndex = 21;
             this.lblId.Visible = false;
-            // 
-            // mtbDataVencimento
-            // 
-            this.mtbDataVencimento.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbDataVencimento.Location = new System.Drawing.Point(12, 185);
-            this.mtbDataVencimento.Mask = "99/99/9999";
-            this.mtbDataVencimento.Name = "mtbDataVencimento";
-            this.mtbDataVencimento.Size = new System.Drawing.Size(100, 26);
-            this.mtbDataVencimento.TabIndex = 20;
             // 
             // lblDataVencimento
             // 
@@ -213,44 +235,23 @@
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(170, 26);
             this.txtBusca.TabIndex = 27;
-            this.txtBusca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBusca_KeyDown);
+            this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
-            // ColumnId
+            // dtpData
             // 
-            this.ColumnId.HeaderText = "Código";
-            this.ColumnId.Name = "ColumnId";
-            this.ColumnId.ReadOnly = true;
-            this.ColumnId.Width = 50;
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "Nome";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            // 
-            // ColumnValor
-            // 
-            this.ColumnValor.HeaderText = "Valor";
-            this.ColumnValor.Name = "ColumnValor";
-            this.ColumnValor.ReadOnly = true;
-            // 
-            // ColumnTipo
-            // 
-            this.ColumnTipo.HeaderText = "Tipo";
-            this.ColumnTipo.Name = "ColumnTipo";
-            this.ColumnTipo.ReadOnly = true;
-            // 
-            // ColumnDataVencimento
-            // 
-            this.ColumnDataVencimento.HeaderText = "Data Vencimento";
-            this.ColumnDataVencimento.Name = "ColumnDataVencimento";
-            this.ColumnDataVencimento.ReadOnly = true;
+            this.dtpData.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpData.Location = new System.Drawing.Point(10, 185);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(123, 26);
+            this.dtpData.TabIndex = 28;
             // 
             // ContasPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 262);
+            this.Controls.Add(this.dtpData);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.lblBusca);
             this.Controls.Add(this.dgvContaPagar);
@@ -258,7 +259,6 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblId);
-            this.Controls.Add(this.mtbDataVencimento);
             this.Controls.Add(this.lblDataVencimento);
             this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.lblTipo);
@@ -282,7 +282,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.MaskedTextBox mtbDataVencimento;
         private System.Windows.Forms.Label lblDataVencimento;
         private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Label lblTipo;
@@ -297,5 +296,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDataVencimento;
+        private System.Windows.Forms.DateTimePicker dtpData;
     }
 }

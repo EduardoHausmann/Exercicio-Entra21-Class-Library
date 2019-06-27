@@ -40,7 +40,7 @@ namespace View
             contaPagar.Nome = txtNome.Text;
             contaPagar.Valor = Convert.ToDecimal(mtbValor.Text);
             contaPagar.Tipo = cbTipo.SelectedItem.ToString();
-            contaPagar.DataVencimento = Convert.ToDateTime(mtbDataVencimento.Text);
+            contaPagar.DataVencimento = Convert.ToDateTime(dtpData.Value);
 
             ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
             repositorio.Alterar(contaPagar);
@@ -52,7 +52,7 @@ namespace View
             contaPagar.Nome = txtNome.Text;
             contaPagar.Valor = Convert.ToDecimal(mtbValor.Text);
             contaPagar.Tipo = cbTipo.SelectedItem.ToString();
-            contaPagar.DataVencimento = Convert.ToDateTime(mtbDataVencimento.ToString());
+            contaPagar.DataVencimento = Convert.ToDateTime(dtpData.Value);
 
             ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
             repositorio.Inserir(contaPagar);
@@ -62,7 +62,7 @@ namespace View
         {
             lblId.Text = "";
             txtNome.Clear();
-            mtbDataVencimento.Clear();
+            dtpData.Value = DateTime.Now;
             mtbValor.Clear();
             cbTipo.SelectedIndex = -1;
         }
@@ -89,12 +89,9 @@ namespace View
             AtualizarTabela();
         }
 
-        private void txtBusca_KeyDown(object sender, KeyEventArgs e)
+        private void txtBusca_TextChanged(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                AtualizarTabela();
-            }
+            AtualizarTabela();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -106,9 +103,10 @@ namespace View
             if (lblId != null)
             {
                 txtNome.Text = contaPagar.Nome;
-                mtbDataVencimento.Text = contaPagar.DataVencimento.ToShortDateString();
+                dtpData.Text = contaPagar.DataVencimento.ToString();
                 mtbValor.Text = contaPagar.Valor.ToString("000.00");
                 cbTipo.Text = contaPagar.Tipo.ToString();
+                lblId.Text = contaPagar.Id.ToString();
             }
         }
 
