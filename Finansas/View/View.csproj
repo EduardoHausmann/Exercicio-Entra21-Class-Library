@@ -52,17 +52,17 @@
     <Compile Include="Cliente.Designer.cs">
       <DependentUpon>Cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContaPagar.cs">
+    <Compile Include="ContasPagar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContaPagar.Designer.cs">
-      <DependentUpon>ContaPagar.cs</DependentUpon>
+    <Compile Include="ContasPagar.Designer.cs">
+      <DependentUpon>ContasPagar.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContaReceber.cs">
+    <Compile Include="ContasReceber.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContaReceber.Designer.cs">
-      <DependentUpon>ContaReceber.cs</DependentUpon>
+    <Compile Include="ContasReceber.Designer.cs">
+      <DependentUpon>ContasReceber.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -75,8 +75,8 @@
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContaPagar.resx">
-      <DependentUpon>ContaPagar.cs</DependentUpon>
+    <EmbeddedResource Include="ContasPagar.resx">
+      <DependentUpon>ContasPagar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

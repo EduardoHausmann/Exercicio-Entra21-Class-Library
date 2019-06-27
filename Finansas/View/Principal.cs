@@ -25,13 +25,13 @@ namespace View
 
         private void btnContaPagar_Click(object sender, EventArgs e)
         {
-            ContaPagar pagar = new ContaPagar();
+            ContasPagar pagar = new ContasPagar();
             pagar.ShowDialog();
         }
 
         private void btnContaReceber_Click(object sender, EventArgs e)
         {
-            ContaReceber receber = new ContaReceber();
+            ContasReceber receber = new ContasReceber();
             receber.ShowDialog();
         }
     }

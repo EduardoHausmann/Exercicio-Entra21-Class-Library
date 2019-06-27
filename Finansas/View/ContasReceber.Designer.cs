@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    partial class ContaReceber
+    partial class ContasReceber
     {
         /// <summary>
         /// Required designer variable.

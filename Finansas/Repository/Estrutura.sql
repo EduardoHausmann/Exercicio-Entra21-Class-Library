@@ -1,4 +1,4 @@
-﻿DROP TABLE contas_pagar;
+﻿DROP TABLE IF EXISTS contas_pagar;
 CREATE TABLE contas_pagar(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
@@ -7,7 +7,7 @@ CREATE TABLE contas_pagar(
 	data_vencimento DATE
 );
 
-DROP TABLE contas_receber;
+DROP TABLE IF EXISTS contas_receber;
 CREATE TABLE contas_receber(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
@@ -17,7 +17,7 @@ CREATE TABLE contas_receber(
 	recebido BIT
 );
 
-DROP TABLE clientes;
+DROP TABLE IF EXISTS clientes;
 CREATE TABLE clientes(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
