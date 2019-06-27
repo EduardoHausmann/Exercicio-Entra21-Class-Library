@@ -41,15 +41,29 @@
             this.lblValor = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnId,
+            this.ColumnNome,
+            this.ColumnValor,
+            this.ColumnTipo,
+            this.ColumnDataNascimento});
             this.dataGridView1.Location = new System.Drawing.Point(154, 57);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(437, 199);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(494, 199);
             this.dataGridView1.TabIndex = 25;
             // 
             // btnApagar
@@ -117,6 +131,12 @@
             this.cbTipo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipo.FormattingEnabled = true;
             this.cbTipo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cbTipo.Items.AddRange(new object[] {
+            "Água",
+            "Eletronico",
+            "Estudo",
+            "Luz",
+            "Telefone/Internet"});
             this.cbTipo.Location = new System.Drawing.Point(12, 134);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(121, 27);
@@ -170,11 +190,42 @@
             this.lblNome.TabIndex = 13;
             this.lblNome.Text = "Nome";
             // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Código";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Width = 50;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "Nome";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            // 
+            // ColumnValor
+            // 
+            this.ColumnValor.HeaderText = "Valor";
+            this.ColumnValor.Name = "ColumnValor";
+            this.ColumnValor.ReadOnly = true;
+            // 
+            // ColumnTipo
+            // 
+            this.ColumnTipo.HeaderText = "Tipo";
+            this.ColumnTipo.Name = "ColumnTipo";
+            this.ColumnTipo.ReadOnly = true;
+            // 
+            // ColumnDataNascimento
+            // 
+            this.ColumnDataNascimento.HeaderText = "Data Nascimento";
+            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
+            this.ColumnDataNascimento.ReadOnly = true;
+            // 
             // ContaPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 262);
+            this.ClientSize = new System.Drawing.Size(654, 262);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnEditar);
@@ -211,5 +262,10 @@
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDataNascimento;
     }
 }
