@@ -44,7 +44,25 @@ namespace Repository
             conexao.Close();
         }
 
-         public List<ContaPagar> ObterTodos (string busca)
+        public void Alterar(ContaPagar contasPagar)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = CadeiaConexaoPagar;
+            conexao.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = @"UPDATE contas_pagar SET nome = @NOME, valor = @VALOR, tipo = @TIPO, data_vencimento = @DATAVENCIMENTO WHERE id = @ID";
+            comando.Parameters.AddWithValue("@NOME", contasPagar.Nome);
+            comando.Parameters.AddWithValue("@VALOR", contasPagar.Valor);
+            comando.Parameters.AddWithValue("@TIPO", contasPagar.Tipo);
+            comando.Parameters.AddWithValue("@DATAVENCIMENTO", contasPagar.DataVencimento);
+            comando.Parameters.AddWithValue("@ID", contasPagar.Id);
+            comando.ExecuteNonQuery();
+            conexao.Close();
+        }
+
+        public List<ContaPagar> ObterTodos(string busca)
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = CadeiaConexaoPagar;
@@ -89,7 +107,7 @@ namespace Repository
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
 
-            if (tabela.Rows.Count ==0)
+            if (tabela.Rows.Count == 0)
             {
                 return null;
             }
@@ -102,24 +120,6 @@ namespace Repository
             contaPagar.Tipo = linha["tipo"].ToString();
             contaPagar.DataVencimento = Convert.ToDateTime(linha["data_vencimento"]);
             return contaPagar;
-        }
-
-        public void Alterar(ContaPagar contasPagar)
-        {
-            SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = CadeiaConexaoPagar;
-            conexao.Open();
-
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexao;
-            comando.CommandText = @"UPDATE contas_pagar SET nome = @NOME, valor = @VALOR, tipo = @TIPO, data_vencimento = @DATAVENCIMENTO WHERE id = @ID";
-            comando.Parameters.AddWithValue("@NOME", contasPagar.Nome);
-            comando.Parameters.AddWithValue("@VALOR", contasPagar.Valor);
-            comando.Parameters.AddWithValue("@TIPO", contasPagar.Tipo);
-            comando.Parameters.AddWithValue("@DATAVENCIMENTO", contasPagar.DataVencimento);
-            comando.Parameters.AddWithValue("@ID", contasPagar.Id);
-            comando.ExecuteNonQuery();
-            conexao.Close();
         }
     }
 }
