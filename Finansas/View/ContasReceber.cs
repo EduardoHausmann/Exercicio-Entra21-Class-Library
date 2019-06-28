@@ -70,7 +70,7 @@ namespace View
             rbNao.Checked = false;
             rbSim.Checked = false;
         }
-
+        
         private void AtualizarTabela()
         {
             ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
@@ -99,12 +99,39 @@ namespace View
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
 
+            int id = Convert.ToInt32(dgvContaReceber.CurrentRow.Cells[0].Value);
+            ContaReceber contaReceber = repositorio.ObterPeloId(id);
+            if (lblId != null)
+            {
+                lblId.Text = contaReceber.Id.ToString();
+                txtNome.Text = contaReceber.Nome;
+                mtbValor.Text = contaReceber.Valor.ToString("000.00");
+                mtbValorRecebido.Text = contaReceber.ValorRecebido.ToString("000.00");
+                dtpDataRecebimento.Text = contaReceber.DataRecebimento.ToString();
+                if (contaReceber.Recebido == true)
+                {
+                    rbSim.Checked = true;
+                }
+                else
+                {
+                    rbNao.Checked = true;
+                }
+            }
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
         {
+            DialogResult resultado = MessageBox.Show("Deseja realmente Apagar?", "AVISO!", MessageBoxButtons.YesNo);
 
+            if (resultado == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(dgvContaReceber.CurrentRow.Cells[0].Value);
+                ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
+                repositorio.Apagar(id);
+                AtualizarTabela();
+            }
         }
     }
 }

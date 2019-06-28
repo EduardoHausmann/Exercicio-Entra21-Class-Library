@@ -43,7 +43,7 @@ namespace Repository
             comando.Parameters.AddWithValue("@ID", contaReceber.Id);
             comando.Parameters.AddWithValue("@NOME", contaReceber.Nome);
             comando.Parameters.AddWithValue("@VALOR", contaReceber.Valor);
-            comando.Parameters.AddWithValue("@VALORRECEBIMENTO", contaReceber.ValorRecebido);
+            comando.Parameters.AddWithValue("@VALORRECEBIDO", contaReceber.ValorRecebido);
             comando.Parameters.AddWithValue("@DATARECEBIMENTO", contaReceber.DataRecebimento);
             comando.Parameters.AddWithValue("@RECEBIDO", contaReceber.Recebido);
             comando.ExecuteNonQuery();
@@ -107,7 +107,6 @@ namespace Repository
             comando.CommandText = @"SELECT * FROM contas_receber WHERE id = @ID";
             comando.Parameters.AddWithValue("@Id", id);
             comando.ExecuteNonQuery();
-            conexao.Close();
 
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
@@ -123,8 +122,8 @@ namespace Repository
             contaReceber.Nome = linha["nome"].ToString();
             contaReceber.Valor = Convert.ToDecimal(linha["valor"]);
             contaReceber.ValorRecebido = Convert.ToDecimal(linha["valor_rebecido"]);
-            contaReceber.DataRecebimento = Convert.ToDateTime(linha["nome"]);
-            contaReceber.Recebido = Convert.ToBoolean(linha["nome"]);
+            contaReceber.DataRecebimento = Convert.ToDateTime(linha["data_recebimento"]);
+            contaReceber.Recebido = Convert.ToBoolean(linha["recebido"]);
             return contaReceber;
 
         }

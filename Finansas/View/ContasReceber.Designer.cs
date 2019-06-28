@@ -81,7 +81,7 @@
             this.txtNome.Location = new System.Drawing.Point(12, 35);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(137, 26);
-            this.txtNome.TabIndex = 2;
+            this.txtNome.TabIndex = 1;
             // 
             // lblValor
             // 
@@ -130,7 +130,7 @@
             this.rbSim.Location = new System.Drawing.Point(13, 269);
             this.rbSim.Name = "rbSim";
             this.rbSim.Size = new System.Drawing.Size(50, 23);
-            this.rbSim.TabIndex = 7;
+            this.rbSim.TabIndex = 5;
             this.rbSim.Text = "Sim";
             this.rbSim.UseVisualStyleBackColor = true;
             // 
@@ -141,7 +141,7 @@
             this.rbNao.Location = new System.Drawing.Point(12, 298);
             this.rbNao.Name = "rbNao";
             this.rbNao.Size = new System.Drawing.Size(54, 23);
-            this.rbNao.TabIndex = 8;
+            this.rbNao.TabIndex = 6;
             this.rbNao.Text = "Não";
             this.rbNao.UseVisualStyleBackColor = true;
             // 
@@ -152,24 +152,26 @@
             this.dtpDataRecebimento.Location = new System.Drawing.Point(12, 206);
             this.dtpDataRecebimento.Name = "dtpDataRecebimento";
             this.dtpDataRecebimento.Size = new System.Drawing.Size(137, 26);
-            this.dtpDataRecebimento.TabIndex = 9;
+            this.dtpDataRecebimento.TabIndex = 4;
             this.dtpDataRecebimento.Value = new System.DateTime(2019, 6, 28, 0, 0, 0, 0);
             // 
             // mtbValorRecebido
             // 
             this.mtbValorRecebido.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbValorRecebido.Location = new System.Drawing.Point(12, 151);
+            this.mtbValorRecebido.Mask = "999.99";
             this.mtbValorRecebido.Name = "mtbValorRecebido";
             this.mtbValorRecebido.Size = new System.Drawing.Size(137, 26);
-            this.mtbValorRecebido.TabIndex = 10;
+            this.mtbValorRecebido.TabIndex = 3;
             // 
             // mtbValor
             // 
             this.mtbValor.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbValor.Location = new System.Drawing.Point(12, 99);
+            this.mtbValor.Mask = "999.99";
             this.mtbValor.Name = "mtbValor";
             this.mtbValor.Size = new System.Drawing.Size(137, 26);
-            this.mtbValor.TabIndex = 11;
+            this.mtbValor.TabIndex = 2;
             // 
             // btnEditar
             // 
@@ -177,7 +179,7 @@
             this.btnEditar.Location = new System.Drawing.Point(513, 19);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(106, 42);
-            this.btnEditar.TabIndex = 12;
+            this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -188,7 +190,7 @@
             this.btnApagar.Location = new System.Drawing.Point(625, 19);
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(106, 42);
-            this.btnApagar.TabIndex = 13;
+            this.btnApagar.TabIndex = 10;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
             this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
@@ -199,7 +201,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(9, 327);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(106, 42);
-            this.btnSalvar.TabIndex = 14;
+            this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -220,7 +222,7 @@
             this.txtBusca.Location = new System.Drawing.Point(232, 35);
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(213, 26);
-            this.txtBusca.TabIndex = 16;
+            this.txtBusca.TabIndex = 8;
             this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
             // dgvContaReceber
