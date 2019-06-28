@@ -235,6 +235,7 @@
             this.dgvContaReceber.Location = new System.Drawing.Point(181, 67);
             this.dgvContaReceber.Name = "dgvContaReceber";
             this.dgvContaReceber.ReadOnly = true;
+            this.dgvContaReceber.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContaReceber.Size = new System.Drawing.Size(549, 302);
             this.dgvContaReceber.TabIndex = 17;
             // 

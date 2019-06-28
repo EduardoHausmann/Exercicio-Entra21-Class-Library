@@ -52,7 +52,7 @@ namespace View
             contaPagar.Nome = txtNome.Text;
             contaPagar.Valor = Convert.ToDecimal(mtbValor.Text);
             contaPagar.Tipo = cbTipo.SelectedItem.ToString();
-            contaPagar.DataVencimento = Convert.ToDateTime(dtpData.Value);
+            contaPagar.DataVencimento = dtpData.Value;
 
             ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
             repositorio.Inserir(contaPagar);
