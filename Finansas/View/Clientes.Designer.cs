@@ -34,7 +34,7 @@
             this.ColumnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lnlNome = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
@@ -100,15 +100,15 @@
             this.ColumnRg.Name = "ColumnRg";
             this.ColumnRg.ReadOnly = true;
             // 
-            // lnlNome
+            // lblNome
             // 
-            this.lnlNome.AutoSize = true;
-            this.lnlNome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnlNome.Location = new System.Drawing.Point(12, 9);
-            this.lnlNome.Name = "lnlNome";
-            this.lnlNome.Size = new System.Drawing.Size(47, 19);
-            this.lnlNome.TabIndex = 1;
-            this.lnlNome.Text = "Nome";
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(12, 9);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(47, 19);
+            this.lblNome.TabIndex = 1;
+            this.lblNome.Text = "Nome";
             // 
             // lblId
             // 
@@ -165,6 +165,7 @@
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(127, 26);
             this.dtpDataNascimento.TabIndex = 7;
+            this.dtpDataNascimento.Value = new System.DateTime(2019, 6, 28, 0, 0, 0, 0);
             // 
             // lblRg
             // 
@@ -255,7 +256,7 @@
             this.Controls.Add(this.lblCpf);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblId);
-            this.Controls.Add(this.lnlNome);
+            this.Controls.Add(this.lblNome);
             this.Controls.Add(this.dgvCliente);
             this.Name = "Clientes";
             this.Text = "Cliente";
@@ -269,7 +270,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvCliente;
-        private System.Windows.Forms.Label lnlNome;
+        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblCpf;

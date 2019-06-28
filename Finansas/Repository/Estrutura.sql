@@ -22,6 +22,6 @@ CREATE TABLE clientes(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
 	cpf VARCHAR(14),
-	data_nascimneto DATE,
+	data_nascimento DATE,
 	rg VARCHAR(9)
 );

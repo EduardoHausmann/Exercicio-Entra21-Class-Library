@@ -245,6 +245,7 @@
             this.dtpDataVencimento.Name = "dtpDataVencimento";
             this.dtpDataVencimento.Size = new System.Drawing.Size(123, 26);
             this.dtpDataVencimento.TabIndex = 4;
+            this.dtpDataVencimento.Value = new System.DateTime(2019, 6, 28, 0, 0, 0, 0);
             // 
             // ContasPagar
             // 
@@ -266,6 +267,8 @@
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ContasPagar";
             this.Text = "ContaPagar";
             this.Load += new System.EventHandler(this.ContasPagar_Load);

@@ -52,7 +52,7 @@ namespace View
             cliente.Nome = txtNome.Text;
             cliente.Cpf = mtbCpf.Text;
             cliente.Rg = mtbRg.Text;
-            cliente.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
+            cliente.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Value);
 
             ClienteRepositorio repositorio = new ClienteRepositorio();
             repositorio.Alterar(cliente);
@@ -96,12 +96,31 @@ namespace View
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            ClienteRepositorio repositorio = new ClienteRepositorio();
 
+            int id = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value);
+            Cliente cliente = repositorio.ObterPeloId(id);
+            if (lblId.Text != null)
+            {
+                lblId.Text = cliente.Id.ToString();
+                txtNome.Text = cliente.Nome;
+                mtbCpf.Text = cliente.Cpf;
+                mtbRg.Text = cliente.Rg;
+                dtpDataNascimento.Text = cliente.DataNascimento.ToString();
+            }
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
         {
+            DialogResult resultado = MessageBox.Show("Deseja realmente Apagar?", "AVISO!", MessageBoxButtons.YesNo);
 
+            if (resultado == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value);
+                ClienteRepositorio repositorio = new ClienteRepositorio();
+                repositorio.Apagar(id);
+                AtualizarTabela();
+            }
         }
     }
 }

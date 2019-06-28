@@ -52,7 +52,7 @@ namespace Repository
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"UPDATE clientes SET nome = @NOME, cpf = @CPF, data_nascimneto = @DATANASCIMENTO, rg = @RG WHERE id = @ID";
+            comando.CommandText = @"UPDATE clientes SET nome = @NOME, cpf = @CPF, data_nascimento = @DATANASCIMENTO, rg = @RG WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", cliente.Id);
             comando.Parameters.AddWithValue("@NOME", cliente.Nome);
             comando.Parameters.AddWithValue("@CPF", cliente.Cpf);

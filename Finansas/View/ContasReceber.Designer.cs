@@ -155,6 +155,7 @@
             this.dtpDataRecebimento.Name = "dtpDataRecebimento";
             this.dtpDataRecebimento.Size = new System.Drawing.Size(137, 26);
             this.dtpDataRecebimento.TabIndex = 9;
+            this.dtpDataRecebimento.Value = new System.DateTime(2019, 6, 28, 0, 0, 0, 0);
             // 
             // mtbValorRecebido
             // 
