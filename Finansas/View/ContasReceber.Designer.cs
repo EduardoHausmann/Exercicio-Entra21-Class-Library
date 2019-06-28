@@ -131,7 +131,6 @@
             this.rbSim.Name = "rbSim";
             this.rbSim.Size = new System.Drawing.Size(50, 23);
             this.rbSim.TabIndex = 7;
-            this.rbSim.TabStop = true;
             this.rbSim.Text = "Sim";
             this.rbSim.UseVisualStyleBackColor = true;
             // 
@@ -143,7 +142,6 @@
             this.rbNao.Name = "rbNao";
             this.rbNao.Size = new System.Drawing.Size(54, 23);
             this.rbNao.TabIndex = 8;
-            this.rbNao.TabStop = true;
             this.rbNao.Text = "Não";
             this.rbNao.UseVisualStyleBackColor = true;
             // 
@@ -182,6 +180,7 @@
             this.btnEditar.TabIndex = 12;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnApagar
             // 
@@ -192,6 +191,7 @@
             this.btnApagar.TabIndex = 13;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnSalvar
             // 
@@ -202,6 +202,7 @@
             this.btnSalvar.TabIndex = 14;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // lblBusca
             // 
@@ -220,6 +221,7 @@
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(213, 26);
             this.txtBusca.TabIndex = 16;
+            this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
             // dgvContaReceber
             // 
@@ -303,6 +305,7 @@
             this.Controls.Add(this.lblNome);
             this.Name = "ContasReceber";
             this.Text = "Conta Receber";
+            this.Load += new System.EventHandler(this.ContasReceber_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContaReceber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
