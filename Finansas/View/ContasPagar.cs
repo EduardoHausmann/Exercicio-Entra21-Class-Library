@@ -33,6 +33,18 @@ namespace View
             AtualizarTabela();
         }
 
+        public void Inserir()
+        {
+            ContaPagar contaPagar = new ContaPagar();
+            contaPagar.Nome = txtNome.Text;
+            contaPagar.Valor = Convert.ToDecimal(mtbValor.Text);
+            contaPagar.Tipo = cbTipo.SelectedItem.ToString();
+            contaPagar.DataVencimento = dtpDataVencimento.Value;
+
+            ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
+            repositorio.Inserir(contaPagar);
+        }
+
         public void Alterar()
         {
             ContaPagar contaPagar = new ContaPagar();
@@ -40,29 +52,17 @@ namespace View
             contaPagar.Nome = txtNome.Text;
             contaPagar.Valor = Convert.ToDecimal(mtbValor.Text);
             contaPagar.Tipo = cbTipo.SelectedItem.ToString();
-            contaPagar.DataVencimento = Convert.ToDateTime(dtpData.Value);
+            contaPagar.DataVencimento = Convert.ToDateTime(dtpDataVencimento.Value);
 
             ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
             repositorio.Alterar(contaPagar);
-        }
-
-        public void Inserir()
-        {
-            ContaPagar contaPagar = new ContaPagar();
-            contaPagar.Nome = txtNome.Text;
-            contaPagar.Valor = Convert.ToDecimal(mtbValor.Text);
-            contaPagar.Tipo = cbTipo.SelectedItem.ToString();
-            contaPagar.DataVencimento = dtpData.Value;
-
-            ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
-            repositorio.Inserir(contaPagar);
         }
 
         public void LimparCampos()
         {
             lblId.Text = "";
             txtNome.Clear();
-            dtpData.Value = DateTime.Now;
+            dtpDataVencimento.Value = DateTime.Now;
             mtbValor.Clear();
             cbTipo.SelectedIndex = -1;
         }
@@ -103,7 +103,7 @@ namespace View
             if (lblId != null)
             {
                 txtNome.Text = contaPagar.Nome;
-                dtpData.Text = contaPagar.DataVencimento.ToString();
+                dtpDataVencimento.Text = contaPagar.DataVencimento.ToString();
                 mtbValor.Text = contaPagar.Valor.ToString("000.00");
                 cbTipo.Text = contaPagar.Tipo.ToString();
                 lblId.Text = contaPagar.Id.ToString();

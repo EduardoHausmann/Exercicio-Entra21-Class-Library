@@ -47,7 +47,7 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.lblBusca = new System.Windows.Forms.Label();
             this.txtBusca = new System.Windows.Forms.TextBox();
-            this.dtpData = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataVencimento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContaPagar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -237,21 +237,21 @@
             this.txtBusca.TabIndex = 8;
             this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
-            // dtpData
+            // dtpDataVencimento
             // 
-            this.dtpData.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(10, 185);
-            this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(123, 26);
-            this.dtpData.TabIndex = 4;
+            this.dtpDataVencimento.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataVencimento.Location = new System.Drawing.Point(10, 185);
+            this.dtpDataVencimento.Name = "dtpDataVencimento";
+            this.dtpDataVencimento.Size = new System.Drawing.Size(123, 26);
+            this.dtpDataVencimento.TabIndex = 4;
             // 
             // ContasPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 262);
-            this.Controls.Add(this.dtpData);
+            this.Controls.Add(this.dtpDataVencimento);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.lblBusca);
             this.Controls.Add(this.dgvContaPagar);
@@ -296,6 +296,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDataVencimento;
-        private System.Windows.Forms.DateTimePicker dtpData;
+        private System.Windows.Forms.DateTimePicker dtpDataVencimento;
     }
 }

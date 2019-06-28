@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    partial class Cliente
+    partial class Clientes
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,18 @@
         private void InitializeComponent()
         {
             this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lnlNome = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
             this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
             this.lblDataNascimento = new System.Windows.Forms.Label();
-            this.dtpData = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.lblRg = new System.Windows.Forms.Label();
             this.mtbRg = new System.Windows.Forms.MaskedTextBox();
             this.lblBusca = new System.Windows.Forms.Label();
@@ -43,11 +48,6 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +68,37 @@
             this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCliente.Size = new System.Drawing.Size(494, 209);
             this.dgvCliente.TabIndex = 0;
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Código";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Width = 50;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "Nome";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            // 
+            // ColumnCpf
+            // 
+            this.ColumnCpf.HeaderText = "CPF";
+            this.ColumnCpf.Name = "ColumnCpf";
+            this.ColumnCpf.ReadOnly = true;
+            // 
+            // ColumnDataNascimento
+            // 
+            this.ColumnDataNascimento.HeaderText = "Data Nascimento";
+            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
+            this.ColumnDataNascimento.ReadOnly = true;
+            // 
+            // ColumnRg
+            // 
+            this.ColumnRg.HeaderText = "RG";
+            this.ColumnRg.Name = "ColumnRg";
+            this.ColumnRg.ReadOnly = true;
             // 
             // lnlNome
             // 
@@ -126,14 +157,14 @@
             this.lblDataNascimento.TabIndex = 6;
             this.lblDataNascimento.Text = "Data Nascimento";
             // 
-            // dtpData
+            // dtpDataNascimento
             // 
-            this.dtpData.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(12, 148);
-            this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(127, 26);
-            this.dtpData.TabIndex = 7;
+            this.dtpDataNascimento.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataNascimento.Location = new System.Drawing.Point(12, 148);
+            this.dtpDataNascimento.Name = "dtpDataNascimento";
+            this.dtpDataNascimento.Size = new System.Drawing.Size(127, 26);
+            this.dtpDataNascimento.TabIndex = 7;
             // 
             // lblRg
             // 
@@ -171,6 +202,7 @@
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(161, 26);
             this.txtBusca.TabIndex = 11;
+            this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
             // btnSalvar
             // 
@@ -192,6 +224,7 @@
             this.btnApagar.TabIndex = 13;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnEditar
             // 
@@ -202,39 +235,9 @@
             this.btnEditar.TabIndex = 14;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // ColumnId
-            // 
-            this.ColumnId.HeaderText = "Código";
-            this.ColumnId.Name = "ColumnId";
-            this.ColumnId.ReadOnly = true;
-            this.ColumnId.Width = 50;
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "Nome";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            // 
-            // ColumnCpf
-            // 
-            this.ColumnCpf.HeaderText = "CPF";
-            this.ColumnCpf.Name = "ColumnCpf";
-            this.ColumnCpf.ReadOnly = true;
-            // 
-            // ColumnDataNascimento
-            // 
-            this.ColumnDataNascimento.HeaderText = "Data Nascimento";
-            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
-            this.ColumnDataNascimento.ReadOnly = true;
-            // 
-            // ColumnRg
-            // 
-            this.ColumnRg.HeaderText = "RG";
-            this.ColumnRg.Name = "ColumnRg";
-            this.ColumnRg.ReadOnly = true;
-            // 
-            // Cliente
+            // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -246,7 +249,7 @@
             this.Controls.Add(this.lblBusca);
             this.Controls.Add(this.mtbRg);
             this.Controls.Add(this.lblRg);
-            this.Controls.Add(this.dtpData);
+            this.Controls.Add(this.dtpDataNascimento);
             this.Controls.Add(this.lblDataNascimento);
             this.Controls.Add(this.mtbCpf);
             this.Controls.Add(this.lblCpf);
@@ -254,8 +257,9 @@
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lnlNome);
             this.Controls.Add(this.dgvCliente);
-            this.Name = "Cliente";
+            this.Name = "Clientes";
             this.Text = "Cliente";
+            this.Load += new System.EventHandler(this.Cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -271,7 +275,7 @@
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.MaskedTextBox mtbCpf;
         private System.Windows.Forms.Label lblDataNascimento;
-        private System.Windows.Forms.DateTimePicker dtpData;
+        private System.Windows.Forms.DateTimePicker dtpDataNascimento;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.MaskedTextBox mtbRg;
         private System.Windows.Forms.Label lblBusca;

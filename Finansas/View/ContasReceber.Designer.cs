@@ -37,7 +37,7 @@
             this.lblRecebido = new System.Windows.Forms.Label();
             this.rbSim = new System.Windows.Forms.RadioButton();
             this.rbNao = new System.Windows.Forms.RadioButton();
-            this.dtpData = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataRecebimento = new System.Windows.Forms.DateTimePicker();
             this.mtbValorRecebido = new System.Windows.Forms.MaskedTextBox();
             this.mtbValor = new System.Windows.Forms.MaskedTextBox();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -147,14 +147,14 @@
             this.rbNao.Text = "Não";
             this.rbNao.UseVisualStyleBackColor = true;
             // 
-            // dtpData
+            // dtpDataRecebimento
             // 
-            this.dtpData.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(12, 206);
-            this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(137, 26);
-            this.dtpData.TabIndex = 9;
+            this.dtpDataRecebimento.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataRecebimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataRecebimento.Location = new System.Drawing.Point(12, 206);
+            this.dtpDataRecebimento.Name = "dtpDataRecebimento";
+            this.dtpDataRecebimento.Size = new System.Drawing.Size(137, 26);
+            this.dtpDataRecebimento.TabIndex = 9;
             // 
             // mtbValorRecebido
             // 
@@ -290,7 +290,7 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.mtbValor);
             this.Controls.Add(this.mtbValorRecebido);
-            this.Controls.Add(this.dtpData);
+            this.Controls.Add(this.dtpDataRecebimento);
             this.Controls.Add(this.rbNao);
             this.Controls.Add(this.rbSim);
             this.Controls.Add(this.lblRecebido);
@@ -319,7 +319,7 @@
         private System.Windows.Forms.Label lblRecebido;
         private System.Windows.Forms.RadioButton rbSim;
         private System.Windows.Forms.RadioButton rbNao;
-        private System.Windows.Forms.DateTimePicker dtpData;
+        private System.Windows.Forms.DateTimePicker dtpDataRecebimento;
         private System.Windows.Forms.MaskedTextBox mtbValorRecebido;
         private System.Windows.Forms.MaskedTextBox mtbValor;
         private System.Windows.Forms.Button btnEditar;
