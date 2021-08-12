@@ -21,11 +21,10 @@ namespace Repository
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"INSERT INTO contas_pagar (nome, valor, tipo, data_vencimento) VALUES (@NOME, @VALOR, @TIPO, @DATAVENCIMENTO)";
+            comando.CommandText = @"INSERT INTO contas_pagar (nome, valor, tipo) VALUES (@NOME, @VALOR, @TIPO)";
             comando.Parameters.AddWithValue("@NOME", contaPagar.Nome);
             comando.Parameters.AddWithValue("@VALOR", contaPagar.Valor);
             comando.Parameters.AddWithValue("@TIPO", contaPagar.Tipo);
-            comando.Parameters.AddWithValue("@DATAVENCIMENTO", contaPagar.DataVencimento);
             comando.ExecuteNonQuery();
             conexao.Close();
         }
@@ -52,11 +51,10 @@ namespace Repository
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"UPDATE contas_pagar SET nome = @NOME, valor = @VALOR, tipo = @TIPO, data_vencimento = @DATAVENCIMENTO WHERE id = @ID";
+            comando.CommandText = @"UPDATE contas_pagar SET nome = @NOME, valor = @VALOR, tipo = @TIPO WHERE id = @ID";
             comando.Parameters.AddWithValue("@NOME", contasPagar.Nome);
             comando.Parameters.AddWithValue("@VALOR", contasPagar.Valor);
             comando.Parameters.AddWithValue("@TIPO", contasPagar.Tipo);
-            comando.Parameters.AddWithValue("@DATAVENCIMENTO", contasPagar.DataVencimento);
             comando.Parameters.AddWithValue("@ID", contasPagar.Id);
             comando.ExecuteNonQuery();
             conexao.Close();
@@ -87,7 +85,6 @@ namespace Repository
                 contaPagar.Nome = linha["nome"].ToString();
                 contaPagar.Valor = Convert.ToDecimal(linha["valor"]);
                 contaPagar.Tipo = linha["tipo"].ToString();
-                contaPagar.DataVencimento = Convert.ToDateTime(linha["data_vencimento"]);
                 contasPagar.Add(contaPagar);
             }
 
@@ -118,7 +115,6 @@ namespace Repository
             contaPagar.Nome = linha["nome"].ToString();
             contaPagar.Valor = Convert.ToDecimal(linha["valor"]);
             contaPagar.Tipo = linha["tipo"].ToString();
-            contaPagar.DataVencimento = Convert.ToDateTime(linha["data_vencimento"]);
             return contaPagar;
         }
     }

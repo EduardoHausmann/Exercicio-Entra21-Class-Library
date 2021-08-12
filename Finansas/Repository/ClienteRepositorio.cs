@@ -21,10 +21,9 @@ namespace Repository
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"INSERT INTO clientes (nome, cpf, data_nascimento, rg) VALUES (@NOME, @CPF, @DATANASCIMENTO, @RG)";
+            comando.CommandText = @"INSERT INTO clientes (nome, cpf, rg) VALUES (@NOME, @CPF, @RG)";
             comando.Parameters.AddWithValue("@NOME", cliente.Nome);
             comando.Parameters.AddWithValue("@CPF", cliente.Cpf);
-            comando.Parameters.AddWithValue("@DATANASCIMENTO", cliente.DataNascimento);
             comando.Parameters.AddWithValue("@RG", cliente.Rg);
             comando.ExecuteNonQuery();
             conexao.Close();
@@ -52,11 +51,10 @@ namespace Repository
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"UPDATE clientes SET nome = @NOME, cpf = @CPF, data_nascimento = @DATANASCIMENTO, rg = @RG WHERE id = @ID";
+            comando.CommandText = @"UPDATE clientes SET nome = @NOME, cpf = @CPF, rg = @RG WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", cliente.Id);
             comando.Parameters.AddWithValue("@NOME", cliente.Nome);
             comando.Parameters.AddWithValue("@CPF", cliente.Cpf);
-            comando.Parameters.AddWithValue("@DATANASCIMENTO", cliente.DataNascimento);
             comando.Parameters.AddWithValue("@RG", cliente.Rg);
             comando.ExecuteNonQuery();
             conexao.Close();
@@ -88,7 +86,6 @@ namespace Repository
                 cliente.Id = Convert.ToInt32(linha["id"]);
                 cliente.Nome = linha["nome"].ToString();
                 cliente.Cpf = linha["cpf"].ToString();
-                cliente.DataNascimento = Convert.ToDateTime(linha["data_nascimento"]);
                 cliente.Rg = linha["rg"].ToString();
                 clientes.Add(cliente);
             }
@@ -120,7 +117,6 @@ namespace Repository
             cliente.Id = id;
             cliente.Nome = linha["nome"].ToString();
             cliente.Cpf = linha["cpf"].ToString();
-            cliente.DataNascimento = Convert.ToDateTime(linha["data_nascimento"]);
             cliente.Rg = linha["rg"].ToString();
             return cliente;
         }

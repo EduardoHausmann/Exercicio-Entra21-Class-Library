@@ -21,12 +21,10 @@ namespace Repository
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"INSERT INTO contas_receber (nome, valor, valor_recebido, data_recebimento, recebido) VALUES (@NOME, @VALOR, @VALORRECEBIDO, @DATARECEBIMENTO, @RECEBIDO)";
+            comando.CommandText = @"INSERT INTO contas_receber (nome, valor, valor_recebido) VALUES (@NOME, @VALOR, @VALORRECEBIDO)";
             comando.Parameters.AddWithValue("@NOME", contaReceber.Nome);
             comando.Parameters.AddWithValue("@VALOR", contaReceber.Valor);
             comando.Parameters.AddWithValue("@VALORRECEBIDO", contaReceber.ValorRecebido);
-            comando.Parameters.AddWithValue("@DATARECEBIMENTO", contaReceber.DataRecebimento);
-            comando.Parameters.AddWithValue("@RECEBIDO", contaReceber.Recebido);
             comando.ExecuteNonQuery();
             conexao.Close();
         }
@@ -39,13 +37,11 @@ namespace Repository
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"UPDATE contas_receber SET nome = @NOME, valor = @VALOR, valor_recebido = @VALORRECEBIDO, data_recebimento = @DATARECEBIMENTO, recebido = @RECEBIDO WHERE id = @ID";
+            comando.CommandText = @"UPDATE contas_receber SET nome = @NOME, valor = @VALOR, valor_recebido = @VALORRECEBIDO WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", contaReceber.Id);
             comando.Parameters.AddWithValue("@NOME", contaReceber.Nome);
             comando.Parameters.AddWithValue("@VALOR", contaReceber.Valor);
             comando.Parameters.AddWithValue("@VALORRECEBIDO", contaReceber.ValorRecebido);
-            comando.Parameters.AddWithValue("@DATARECEBIMENTO", contaReceber.DataRecebimento);
-            comando.Parameters.AddWithValue("@RECEBIDO", contaReceber.Recebido);
             comando.ExecuteNonQuery();
             conexao.Close();
         }
@@ -89,8 +85,6 @@ namespace Repository
                 contaReceber.Nome = linha["nome"].ToString();
                 contaReceber.Valor = Convert.ToDecimal(linha["valor"]);
                 contaReceber.ValorRecebido = Convert.ToDecimal(linha["valor_recebido"]);
-                contaReceber.DataRecebimento = Convert.ToDateTime(linha["data_recebimento"]);
-                contaReceber.Recebido = Convert.ToBoolean(linha["recebido"]);
                 contasReceber.Add(contaReceber);
             }
             return contasReceber;
@@ -122,8 +116,6 @@ namespace Repository
             contaReceber.Nome = linha["nome"].ToString();
             contaReceber.Valor = Convert.ToDecimal(linha["valor"]);
             contaReceber.ValorRecebido = Convert.ToDecimal(linha["valor_rebecido"]);
-            contaReceber.DataRecebimento = Convert.ToDateTime(linha["data_recebimento"]);
-            contaReceber.Recebido = Convert.ToBoolean(linha["recebido"]);
             return contaReceber;
 
         }
