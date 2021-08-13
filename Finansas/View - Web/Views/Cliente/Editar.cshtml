@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Editar";
+}
+
+<title>Editar Cliente</title>
+<h2 class="text-center fw-bolder mt-3 mb-3">Edição de Cliente</h2>
+
+<form action="/cliente/update" method="post">
+    <input type="hidden" name="id" value="@ViewBag.Cliente.Id" />
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-nome">Cliente</label>
+                <input type="text" name="nome" id="campo-nome" class="form-control" value="@ViewBag.Cliente.Nome" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="campo-cpf">CPF</label>
+                <input type="text" name="cpf" id="campo-cpf" class="form-control" value="@ViewBag.Cliente.Cpf" />
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group">
+                <label for="campo-rg">RG</label>
+                <input type="text" name="rg" id="campo-rg" class="form-control" value="@ViewBag.Cliente.Rg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <button type="submit" class="btn btn-outline-success float-right mt-3 mb-3"> <i class="fas fa-save"></i> Salvar</button>
+        </div>
+    </div>
+</form>
