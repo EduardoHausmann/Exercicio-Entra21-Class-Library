@@ -38,7 +38,6 @@ namespace View
             Cliente cliente = new Cliente();
             cliente.Nome = txtNome.Text;
             cliente.Cpf = mtbCpf.Text;
-            cliente.DataNascimento = dtpDataNascimento.Value;
             cliente.Rg = mtbRg.Text;
 
             ClienteRepositorio repositorio = new ClienteRepositorio();
@@ -52,7 +51,6 @@ namespace View
             cliente.Nome = txtNome.Text;
             cliente.Cpf = mtbCpf.Text;
             cliente.Rg = mtbRg.Text;
-            cliente.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Value);
 
             ClienteRepositorio repositorio = new ClienteRepositorio();
             repositorio.Alterar(cliente);
@@ -64,7 +62,6 @@ namespace View
             txtNome.Clear();
             mtbCpf.Clear();
             mtbRg.Clear();
-            dtpDataNascimento.Value = DateTime.Now;
         }
 
         private void AtualizarTabela()
@@ -79,7 +76,7 @@ namespace View
                 Cliente cliente = clientes[i];
                 dgvCliente.Rows.Add(new object[]
                 {
-                    cliente.Id, cliente.Nome, cliente.Cpf, cliente.DataNascimento.ToString(), cliente.Rg
+                    cliente.Id, cliente.Nome, cliente.Cpf, cliente.Rg
                 });
             }
         }
@@ -94,20 +91,9 @@ namespace View
             AtualizarTabela();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            ClienteRepositorio repositorio = new ClienteRepositorio();
-
-            int id = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value);
-            Cliente cliente = repositorio.ObterPeloId(id);
-            if (lblId.Text != null)
-            {
-                lblId.Text = cliente.Id.ToString();
-                txtNome.Text = cliente.Nome;
-                mtbCpf.Text = cliente.Cpf;
-                mtbRg.Text = cliente.Rg;
-                dtpDataNascimento.Text = cliente.DataNascimento.ToString();
-            }
+            AtualizarTabela();   
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
@@ -120,6 +106,21 @@ namespace View
                 ClienteRepositorio repositorio = new ClienteRepositorio();
                 repositorio.Apagar(id);
                 AtualizarTabela();
+            }
+        }
+
+        private void dgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ClienteRepositorio repositorio = new ClienteRepositorio();
+
+            int id = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value);
+            Cliente cliente = repositorio.ObterPeloId(id);
+            if (lblId.Text != null)
+            {
+                lblId.Text = cliente.Id.ToString();
+                txtNome.Text = cliente.Nome;
+                mtbCpf.Text = cliente.Cpf;
+                mtbRg.Text = cliente.Rg;
             }
         }
     }

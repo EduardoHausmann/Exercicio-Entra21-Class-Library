@@ -11,9 +11,9 @@ namespace Repository
 {
     public class ContaPagarRepositorio
     {
-        public string CadeiaConexaoPagar = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
-
-        public void Inserir(ContaPagar contaPagar)
+        public string CadeiaConexaoPagar = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\GitHub\Exercicio-Entra21-Class-Library\Finansas\Repository\Database.mdf;Integrated Security=True";
+        
+        public int Inserir(ContaPagar contaPagar)
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = CadeiaConexaoPagar;
@@ -25,11 +25,12 @@ namespace Repository
             comando.Parameters.AddWithValue("@NOME", contaPagar.Nome);
             comando.Parameters.AddWithValue("@VALOR", contaPagar.Valor);
             comando.Parameters.AddWithValue("@TIPO", contaPagar.Tipo);
-            comando.ExecuteNonQuery();
+            int id = Convert.ToInt32(comando.ExecuteScalar());
             conexao.Close();
+            return id;
         }
 
-        public void Apagar(int id)
+        public bool Apagar(int id)
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = CadeiaConexaoPagar;
@@ -39,11 +40,12 @@ namespace Repository
             comando.Connection = conexao;
             comando.CommandText = @"DELETE FROM contas_pagar WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
-            comando.ExecuteNonQuery();
+            int qtdAfetada = Convert.ToInt32(comando.ExecuteNonQuery());
             conexao.Close();
+            return qtdAfetada == 1;
         }
 
-        public void Alterar(ContaPagar contasPagar)
+        public bool Alterar(ContaPagar contasPagar)
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = CadeiaConexaoPagar;
@@ -56,8 +58,9 @@ namespace Repository
             comando.Parameters.AddWithValue("@VALOR", contasPagar.Valor);
             comando.Parameters.AddWithValue("@TIPO", contasPagar.Tipo);
             comando.Parameters.AddWithValue("@ID", contasPagar.Id);
-            comando.ExecuteNonQuery();
+            int qtdAfetada = Convert.ToInt32(comando.ExecuteNonQuery());
             conexao.Close();
+            return qtdAfetada == 1;
         }
 
         public List<ContaPagar> ObterTodos(string busca)

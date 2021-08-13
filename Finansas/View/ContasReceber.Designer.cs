@@ -33,14 +33,9 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.lblValorRecebido = new System.Windows.Forms.Label();
-            this.lblDataRecebimento = new System.Windows.Forms.Label();
-            this.lblRecebido = new System.Windows.Forms.Label();
-            this.rbSim = new System.Windows.Forms.RadioButton();
-            this.rbNao = new System.Windows.Forms.RadioButton();
-            this.dtpDataRecebimento = new System.Windows.Forms.DateTimePicker();
             this.mtbValorRecebido = new System.Windows.Forms.MaskedTextBox();
             this.mtbValor = new System.Windows.Forms.MaskedTextBox();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.lblBusca = new System.Windows.Forms.Label();
@@ -50,8 +45,6 @@
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnValorRecebido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataRecebimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRecebido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContaReceber)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +73,7 @@
             this.txtNome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(12, 35);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(137, 26);
+            this.txtNome.Size = new System.Drawing.Size(149, 26);
             this.txtNome.TabIndex = 1;
             // 
             // lblValor
@@ -103,65 +96,13 @@
             this.lblValorRecebido.TabIndex = 4;
             this.lblValorRecebido.Text = "Valor Recebido";
             // 
-            // lblDataRecebimento
-            // 
-            this.lblDataRecebimento.AutoSize = true;
-            this.lblDataRecebimento.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataRecebimento.Location = new System.Drawing.Point(12, 184);
-            this.lblDataRecebimento.Name = "lblDataRecebimento";
-            this.lblDataRecebimento.Size = new System.Drawing.Size(121, 19);
-            this.lblDataRecebimento.TabIndex = 5;
-            this.lblDataRecebimento.Text = "Data Recebimento";
-            // 
-            // lblRecebido
-            // 
-            this.lblRecebido.AutoSize = true;
-            this.lblRecebido.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecebido.Location = new System.Drawing.Point(12, 247);
-            this.lblRecebido.Name = "lblRecebido";
-            this.lblRecebido.Size = new System.Drawing.Size(67, 19);
-            this.lblRecebido.TabIndex = 6;
-            this.lblRecebido.Text = "Recebido";
-            // 
-            // rbSim
-            // 
-            this.rbSim.AutoSize = true;
-            this.rbSim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSim.Location = new System.Drawing.Point(13, 269);
-            this.rbSim.Name = "rbSim";
-            this.rbSim.Size = new System.Drawing.Size(50, 23);
-            this.rbSim.TabIndex = 5;
-            this.rbSim.Text = "Sim";
-            this.rbSim.UseVisualStyleBackColor = true;
-            // 
-            // rbNao
-            // 
-            this.rbNao.AutoSize = true;
-            this.rbNao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNao.Location = new System.Drawing.Point(12, 298);
-            this.rbNao.Name = "rbNao";
-            this.rbNao.Size = new System.Drawing.Size(54, 23);
-            this.rbNao.TabIndex = 6;
-            this.rbNao.Text = "Não";
-            this.rbNao.UseVisualStyleBackColor = true;
-            // 
-            // dtpDataRecebimento
-            // 
-            this.dtpDataRecebimento.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDataRecebimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataRecebimento.Location = new System.Drawing.Point(12, 206);
-            this.dtpDataRecebimento.Name = "dtpDataRecebimento";
-            this.dtpDataRecebimento.Size = new System.Drawing.Size(137, 26);
-            this.dtpDataRecebimento.TabIndex = 4;
-            this.dtpDataRecebimento.Value = new System.DateTime(2019, 6, 28, 0, 0, 0, 0);
-            // 
             // mtbValorRecebido
             // 
             this.mtbValorRecebido.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbValorRecebido.Location = new System.Drawing.Point(12, 151);
             this.mtbValorRecebido.Mask = "999.99";
             this.mtbValorRecebido.Name = "mtbValorRecebido";
-            this.mtbValorRecebido.Size = new System.Drawing.Size(137, 26);
+            this.mtbValorRecebido.Size = new System.Drawing.Size(149, 26);
             this.mtbValorRecebido.TabIndex = 3;
             // 
             // mtbValor
@@ -170,26 +111,26 @@
             this.mtbValor.Location = new System.Drawing.Point(12, 99);
             this.mtbValor.Mask = "999.99";
             this.mtbValor.Name = "mtbValor";
-            this.mtbValor.Size = new System.Drawing.Size(137, 26);
+            this.mtbValor.Size = new System.Drawing.Size(149, 26);
             this.mtbValor.TabIndex = 2;
             // 
-            // btnEditar
+            // btnAtualizar
             // 
-            this.btnEditar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(513, 19);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(106, 42);
-            this.btnEditar.TabIndex = 9;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnAtualizar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.Location = new System.Drawing.Point(546, 27);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(73, 26);
+            this.btnAtualizar.TabIndex = 9;
+            this.btnAtualizar.Text = "Refresh";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnApagar
             // 
             this.btnApagar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApagar.Location = new System.Drawing.Point(625, 19);
+            this.btnApagar.Location = new System.Drawing.Point(88, 194);
             this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(106, 42);
+            this.btnApagar.Size = new System.Drawing.Size(73, 26);
             this.btnApagar.TabIndex = 10;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
@@ -198,9 +139,9 @@
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(9, 327);
+            this.btnSalvar.Location = new System.Drawing.Point(9, 194);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(106, 42);
+            this.btnSalvar.Size = new System.Drawing.Size(73, 26);
             this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -210,7 +151,7 @@
             // 
             this.lblBusca.AutoSize = true;
             this.lblBusca.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusca.Location = new System.Drawing.Point(181, 38);
+            this.lblBusca.Location = new System.Drawing.Point(175, 30);
             this.lblBusca.Name = "lblBusca";
             this.lblBusca.Size = new System.Drawing.Size(51, 19);
             this.lblBusca.TabIndex = 15;
@@ -219,9 +160,9 @@
             // txtBusca
             // 
             this.txtBusca.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusca.Location = new System.Drawing.Point(232, 35);
+            this.txtBusca.Location = new System.Drawing.Point(226, 27);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(213, 26);
+            this.txtBusca.Size = new System.Drawing.Size(314, 26);
             this.txtBusca.TabIndex = 8;
             this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
@@ -229,20 +170,21 @@
             // 
             this.dgvContaReceber.AllowUserToAddRows = false;
             this.dgvContaReceber.AllowUserToDeleteRows = false;
+            this.dgvContaReceber.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvContaReceber.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContaReceber.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId,
             this.ColumnNome,
             this.ColumnValor,
-            this.ColumnValorRecebido,
-            this.ColumnDataRecebimento,
-            this.ColumnRecebido});
-            this.dgvContaReceber.Location = new System.Drawing.Point(181, 67);
+            this.ColumnValorRecebido});
+            this.dgvContaReceber.Location = new System.Drawing.Point(175, 67);
             this.dgvContaReceber.Name = "dgvContaReceber";
             this.dgvContaReceber.ReadOnly = true;
+            this.dgvContaReceber.RowHeadersVisible = false;
             this.dgvContaReceber.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContaReceber.Size = new System.Drawing.Size(549, 302);
+            this.dgvContaReceber.Size = new System.Drawing.Size(444, 153);
             this.dgvContaReceber.TabIndex = 17;
+            this.dgvContaReceber.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContaReceber_CellDoubleClick);
             // 
             // ColumnId
             // 
@@ -256,55 +198,43 @@
             this.ColumnNome.HeaderText = "Nome";
             this.ColumnNome.Name = "ColumnNome";
             this.ColumnNome.ReadOnly = true;
+            this.ColumnNome.Width = 150;
             // 
             // ColumnValor
             // 
             this.ColumnValor.HeaderText = "Valor";
             this.ColumnValor.Name = "ColumnValor";
             this.ColumnValor.ReadOnly = true;
+            this.ColumnValor.Width = 120;
             // 
             // ColumnValorRecebido
             // 
             this.ColumnValorRecebido.HeaderText = "Valor Recebido";
             this.ColumnValorRecebido.Name = "ColumnValorRecebido";
             this.ColumnValorRecebido.ReadOnly = true;
-            // 
-            // ColumnDataRecebimento
-            // 
-            this.ColumnDataRecebimento.HeaderText = "Data Recebimento";
-            this.ColumnDataRecebimento.Name = "ColumnDataRecebimento";
-            this.ColumnDataRecebimento.ReadOnly = true;
-            // 
-            // ColumnRecebido
-            // 
-            this.ColumnRecebido.HeaderText = "Recebido";
-            this.ColumnRecebido.Name = "ColumnRecebido";
-            this.ColumnRecebido.ReadOnly = true;
-            this.ColumnRecebido.Width = 55;
+            this.ColumnValorRecebido.Width = 120;
             // 
             // ContasReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 378);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(626, 227);
             this.Controls.Add(this.dgvContaReceber);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.lblBusca);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnApagar);
-            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.mtbValor);
             this.Controls.Add(this.mtbValorRecebido);
-            this.Controls.Add(this.dtpDataRecebimento);
-            this.Controls.Add(this.rbNao);
-            this.Controls.Add(this.rbSim);
-            this.Controls.Add(this.lblRecebido);
-            this.Controls.Add(this.lblDataRecebimento);
             this.Controls.Add(this.lblValorRecebido);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblNome);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ContasReceber";
             this.Text = "Conta Receber";
             this.Load += new System.EventHandler(this.ContasReceber_Load);
@@ -321,14 +251,9 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label lblValorRecebido;
-        private System.Windows.Forms.Label lblDataRecebimento;
-        private System.Windows.Forms.Label lblRecebido;
-        private System.Windows.Forms.RadioButton rbSim;
-        private System.Windows.Forms.RadioButton rbNao;
-        private System.Windows.Forms.DateTimePicker dtpDataRecebimento;
         private System.Windows.Forms.MaskedTextBox mtbValorRecebido;
         private System.Windows.Forms.MaskedTextBox mtbValor;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnApagar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblBusca;
@@ -338,7 +263,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValorRecebido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDataRecebimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRecebido;
     }
 }

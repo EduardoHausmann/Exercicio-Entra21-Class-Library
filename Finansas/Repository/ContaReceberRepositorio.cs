@@ -11,9 +11,9 @@ namespace Repository
 {
     public class ContaReceberRepositorio
     {
-        public string CadeiaConexaoReceber = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+        public string CadeiaConexaoReceber = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\GitHub\Exercicio-Entra21-Class-Library\Finansas\Repository\Database.mdf;Integrated Security=True";
 
-        public void Inserir(ContaReceber contaReceber)
+        public int Inserir(ContaReceber contaReceber)
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = CadeiaConexaoReceber;
@@ -25,11 +25,12 @@ namespace Repository
             comando.Parameters.AddWithValue("@NOME", contaReceber.Nome);
             comando.Parameters.AddWithValue("@VALOR", contaReceber.Valor);
             comando.Parameters.AddWithValue("@VALORRECEBIDO", contaReceber.ValorRecebido);
-            comando.ExecuteNonQuery();
+            int id = Convert.ToInt32(comando.ExecuteScalar());
             conexao.Close();
+            return id;
         }
 
-        public void Alterar(ContaReceber contaReceber)
+        public bool Alterar(ContaReceber contaReceber)
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = CadeiaConexaoReceber;
@@ -42,11 +43,12 @@ namespace Repository
             comando.Parameters.AddWithValue("@NOME", contaReceber.Nome);
             comando.Parameters.AddWithValue("@VALOR", contaReceber.Valor);
             comando.Parameters.AddWithValue("@VALORRECEBIDO", contaReceber.ValorRecebido);
-            comando.ExecuteNonQuery();
+            int qtdAfetada = Convert.ToInt32(comando.ExecuteNonQuery());
             conexao.Close();
+            return qtdAfetada == 1;
         }
 
-        public void Apagar(int id)
+        public bool Apagar(int id)
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = CadeiaConexaoReceber;
@@ -56,8 +58,9 @@ namespace Repository
             comando.Connection = conexao;
             comando.CommandText = @"DELETE FROM contas_receber WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
-            comando.ExecuteNonQuery();
+            int qtdAfetada = Convert.ToInt32(comando.ExecuteNonQuery());
             conexao.Close();
+            return qtdAfetada == 1;
         }
 
         public List<ContaReceber> ObterTodos(string busca)
@@ -115,7 +118,7 @@ namespace Repository
             contaReceber.Id = id;
             contaReceber.Nome = linha["nome"].ToString();
             contaReceber.Valor = Convert.ToDecimal(linha["valor"]);
-            contaReceber.ValorRecebido = Convert.ToDecimal(linha["valor_rebecido"]);
+            contaReceber.ValorRecebido = Convert.ToDecimal(linha["valor_recebido"]);
             return contaReceber;
 
         }

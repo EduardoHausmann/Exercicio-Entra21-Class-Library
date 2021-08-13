@@ -11,9 +11,9 @@ namespace Repository
 {
     public class ClienteRepositorio
     {
-        public string CadeiaConexaoCliente = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\Exercicio.mdf;Integrated Security=True;Connect Timeout=30";
+        public string CadeiaConexaoCliente = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\GitHub\Exercicio-Entra21-Class-Library\Finansas\Repository\Database.mdf;Integrated Security=True";
 
-        public void Inserir(Cliente cliente)
+        public int Inserir(Cliente cliente)
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = CadeiaConexaoCliente;
@@ -25,11 +25,12 @@ namespace Repository
             comando.Parameters.AddWithValue("@NOME", cliente.Nome);
             comando.Parameters.AddWithValue("@CPF", cliente.Cpf);
             comando.Parameters.AddWithValue("@RG", cliente.Rg);
-            comando.ExecuteNonQuery();
+            int id = Convert.ToInt32(comando.ExecuteScalar());
             conexao.Close();
+            return id;
         }
 
-        public void Apagar(int id)
+        public bool Apagar(int id)
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = CadeiaConexaoCliente;
@@ -39,11 +40,12 @@ namespace Repository
             comando.Connection = conexao;
             comando.CommandText = @"DELETE FROM clientes WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
-            comando.ExecuteNonQuery();
+            int qtdAfetada = Convert.ToInt32(comando.ExecuteNonQuery());
             conexao.Close();
+            return qtdAfetada == 1;
         }
 
-        public void Alterar(Cliente cliente)
+        public bool Alterar(Cliente cliente)
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = CadeiaConexaoCliente;
@@ -56,8 +58,9 @@ namespace Repository
             comando.Parameters.AddWithValue("@NOME", cliente.Nome);
             comando.Parameters.AddWithValue("@CPF", cliente.Cpf);
             comando.Parameters.AddWithValue("@RG", cliente.Rg);
-            comando.ExecuteNonQuery();
+            int qtdAfetada = Convert.ToInt32(comando.ExecuteNonQuery());
             conexao.Close();
+            return qtdAfetada == 1;
 
         }
 

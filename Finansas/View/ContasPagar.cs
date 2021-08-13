@@ -39,7 +39,6 @@ namespace View
             contaPagar.Nome = txtNome.Text;
             contaPagar.Valor = Convert.ToDecimal(mtbValor.Text);
             contaPagar.Tipo = cbTipo.SelectedItem.ToString();
-            contaPagar.DataVencimento = dtpDataVencimento.Value;
 
             ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
             repositorio.Inserir(contaPagar);
@@ -52,7 +51,6 @@ namespace View
             contaPagar.Nome = txtNome.Text;
             contaPagar.Valor = Convert.ToDecimal(mtbValor.Text);
             contaPagar.Tipo = cbTipo.SelectedItem.ToString();
-            contaPagar.DataVencimento = Convert.ToDateTime(dtpDataVencimento.Value);
 
             ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
             repositorio.Alterar(contaPagar);
@@ -62,7 +60,6 @@ namespace View
         {
             lblId.Text = "";
             txtNome.Clear();
-            dtpDataVencimento.Value = DateTime.Now;
             mtbValor.Clear();
             cbTipo.SelectedIndex = -1;
         }
@@ -79,7 +76,7 @@ namespace View
                 ContaPagar contaPagar = contasPagar[i];
                 dgvContaPagar.Rows.Add(new object[]
                 {
-                    contaPagar.Id, contaPagar.Nome, contaPagar.Valor.ToString(), contaPagar.Tipo, contaPagar.DataVencimento.ToString()
+                    contaPagar.Id, contaPagar.Nome, contaPagar.Valor.ToString(), contaPagar.Tipo
                 });
             }
         }
@@ -94,20 +91,9 @@ namespace View
             AtualizarTabela();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
-
-            int id = Convert.ToInt32(dgvContaPagar.CurrentRow.Cells[0].Value);
-            ContaPagar contaPagar = repositorio.ObterPeloId(id);
-            if (lblId != null)
-            {
-                txtNome.Text = contaPagar.Nome;
-                dtpDataVencimento.Text = contaPagar.DataVencimento.ToString();
-                mtbValor.Text = contaPagar.Valor.ToString("000.00");
-                cbTipo.Text = contaPagar.Tipo.ToString();
-                lblId.Text = contaPagar.Id.ToString();
-            }
+            AtualizarTabela();
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
@@ -121,6 +107,21 @@ namespace View
                 repositorio.Apagar(id);
                 AtualizarTabela();
             }            
+        }
+
+        private void dgvContaPagar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
+
+            int id = Convert.ToInt32(dgvContaPagar.CurrentRow.Cells[0].Value);
+            ContaPagar contaPagar = repositorio.ObterPeloId(id);
+            if (lblId != null)
+            {
+                txtNome.Text = contaPagar.Nome;
+                mtbValor.Text = contaPagar.Valor.ToString("000.00");
+                cbTipo.Text = contaPagar.Tipo.ToString();
+                lblId.Text = contaPagar.Id.ToString();
+            }
         }
     }
 }

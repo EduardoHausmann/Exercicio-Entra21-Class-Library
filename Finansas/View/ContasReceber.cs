@@ -39,8 +39,6 @@ namespace View
             contaReceber.Nome = txtNome.Text;
             contaReceber.Valor = Convert.ToDecimal(mtbValor.Text);
             contaReceber.ValorRecebido = Convert.ToDecimal(mtbValorRecebido.Text);
-            contaReceber.DataRecebimento = dtpDataRecebimento.Value;
-            contaReceber.Recebido = rbSim.Checked;
 
             ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
             repositorio.Inserir(contaReceber);
@@ -53,8 +51,6 @@ namespace View
             contaReceber.Nome = txtNome.Text;
             contaReceber.Valor = Convert.ToDecimal(mtbValor.Text);
             contaReceber.ValorRecebido = Convert.ToDecimal(mtbValorRecebido.Text);
-            contaReceber.DataRecebimento = Convert.ToDateTime(dtpDataRecebimento.Value);
-            contaReceber.Recebido = rbSim.Checked;
 
             ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
             repositorio.Alterar(contaReceber);
@@ -66,22 +62,21 @@ namespace View
             txtNome.Clear();
             mtbValor.Clear();
             mtbValorRecebido.Clear();
-            dtpDataRecebimento.Value = DateTime.Now;
-            rbNao.Checked = false;
-            rbSim.Checked = false;
         }
         
         private void AtualizarTabela()
         {
             ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
+
             string busca = txtBusca.Text;
             List<ContaReceber> contasReceber = repositorio.ObterTodos(busca);
+            dgvContaReceber.RowCount = 0;
             for (int i = 0; i < contasReceber.Count; i++)
             {
                 ContaReceber contaReceber = contasReceber[i];
                 dgvContaReceber.Rows.Add(new object[]
                 {
-                    contaReceber.Id, contaReceber.Nome, contaReceber.Valor.ToString(), contaReceber.ValorRecebido.ToString(), contaReceber.DataRecebimento.ToString(), contaReceber.Recebido.ToString()
+                    contaReceber.Id, contaReceber.Nome, contaReceber.Valor.ToString(), contaReceber.ValorRecebido.ToString()
                 });
 
             }
@@ -97,28 +92,9 @@ namespace View
             AtualizarTabela();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
-
-            int id = Convert.ToInt32(dgvContaReceber.CurrentRow.Cells[0].Value);
-            ContaReceber contaReceber = repositorio.ObterPeloId(id);
-            if (lblId != null)
-            {
-                lblId.Text = contaReceber.Id.ToString();
-                txtNome.Text = contaReceber.Nome;
-                mtbValor.Text = contaReceber.Valor.ToString("000.00");
-                mtbValorRecebido.Text = contaReceber.ValorRecebido.ToString("000.00");
-                dtpDataRecebimento.Text = contaReceber.DataRecebimento.ToString();
-                if (contaReceber.Recebido == true)
-                {
-                    rbSim.Checked = true;
-                }
-                else
-                {
-                    rbNao.Checked = true;
-                }
-            }
+            AtualizarTabela();
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
@@ -131,6 +107,21 @@ namespace View
                 ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
                 repositorio.Apagar(id);
                 AtualizarTabela();
+            }
+        }
+
+        private void dgvContaReceber_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
+
+            int id = Convert.ToInt32(dgvContaReceber.CurrentRow.Cells[0].Value);
+            ContaReceber contaReceber = repositorio.ObterPeloId(id);
+            if (lblId != null)
+            {
+                lblId.Text = contaReceber.Id.ToString();
+                txtNome.Text = contaReceber.Nome;
+                mtbValor.Text = contaReceber.Valor.ToString("000.00");
+                mtbValorRecebido.Text = contaReceber.ValorRecebido.ToString("000.00");
             }
         }
     }
