@@ -8,7 +8,7 @@
 
 <div class="row mb-3">
     <div class="col-12">
-        <a class="btn btn-outline-primary mt-3 mb-3" href="/cliente/Cadastro" id="botao-cadastro">@*<i class="fa-plus"></i>*@Cadastrar Cliente</a>
+        <a class="btn btn-outline-primary mt-3 mb-3" href="/cliente/Cadastro" id="botao-cadastro"><i class="bi bi-plus-square-dotted"></i> Cadastrar Cliente</a>
     </div>
 </div>
 
@@ -32,8 +32,8 @@
             <td>@cliente.Cpf</td>
             <td>@cliente.Rg</td>
             <td>
-                <a href="/cliente/editar?id=@cliente.Id" class="btn btn-outline-primary">Editar</a>
-                <a href="/cliente/apagar?id=@cliente.Id" class="btn btn-outline-danger">Apagar</a>
+                <a href="/cliente/editar?id=@cliente.Id" class="btn btn-outline-primary"><i class="bi bi-pencil"></i> Editar</a>
+                <a href="/cliente/apagar?id=@cliente.Id" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Apagar</a>
             </td>
         </tr>
         }
