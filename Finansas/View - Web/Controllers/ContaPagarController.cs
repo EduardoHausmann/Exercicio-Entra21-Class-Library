@@ -10,7 +10,7 @@ namespace View___Web.Controllers
 {
     public class ContaPagarController : Controller
     {
-        ContaPagarRepositorio repository = new ContaPagarRepositorio();
+        ContaPagarRepository repository = new ContaPagarRepository();
 
         public ActionResult Index()
         {
@@ -46,7 +46,6 @@ namespace View___Web.Controllers
         public ActionResult Editar(int id)
         {
             ContaPagar contaPagar = repository.ObterPeloId(id);
-
             ViewBag.ContaPagar = contaPagar;
 
             return View();

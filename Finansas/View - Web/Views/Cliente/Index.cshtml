@@ -8,7 +8,7 @@
 
 <div class="row mb-3">
     <div class="col-12">
-        <a class="btn btn-outline-primary mt-3 mb-3" href="/cliente/Cadastro" id="botao-cadastro"><i class="bi bi-plus-square-dotted"></i> Cadastrar Cliente</a>
+        <a class="btn btn-outline-primary mt-3 mb-3" style="float: right;" href="/cliente/Cadastro" id="botao-cadastro"><i class="bi bi-plus-square-dotted"></i> Cadastrar Cliente</a>
     </div>
 </div>
 
@@ -26,16 +26,16 @@
     <tbody>
         @foreach (Model.Cliente cliente in ViewBag.Clientes)
         {
-        <tr>
-            <td>@cliente.Id</td>
-            <td>@cliente.Nome</td>
-            <td>@cliente.Cpf</td>
-            <td>@cliente.Rg</td>
-            <td>
-                <a href="/cliente/editar?id=@cliente.Id" class="btn btn-outline-primary"><i class="bi bi-pencil"></i> Editar</a>
-                <a href="/cliente/apagar?id=@cliente.Id" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Apagar</a>
-            </td>
-        </tr>
+            <tr>
+                <td>@cliente.Id</td>
+                <td>@cliente.Nome</td>
+                <td>@cliente.Cpf</td>
+                <td>@cliente.Rg</td>
+                <td>
+                    <a href="/cliente/editar?id=@cliente.Id" class="btn btn-outline-primary"><i class="bi bi-pencil"></i> Editar</a>
+                    <a href="/cliente/apagar?id=@cliente.Id" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Apagar</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<title>Cadastrar Conta Pagar</title>
+<h2 class="text-center fw-bolder mt-3 mb-3">Cadastro de Conta a Pagar</h2>
+
+<form action="/contaPagar/Store" method="post">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-nome">Nome</label>
+                <input type="text" name="nome" id="campo-nome" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="campo-valor">Valor</label>
+                <input type="text" name="valor" id="campo-valor" class="form-control" />
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group">
+                <label for="campo-tipo">Tipo</label>
+                <select name="tipo" class="form-select">
+                    <option disabled="disabled" selected="selected">Selecione um Tipo de Conta</option>
+                    <option value="Água">Água</option>
+                    <option value="Eletronico">Eletronico</option>
+                    <option value="Estudo">Estudo</option>
+                    <option value="Luz">Luz</option>
+                    <option value="Telefone/Internet">Telefone/Internet</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <button type="submit" class="btn btn-outline-success float-right mt-3 mb-3"><i class="bi bi-save"></i> Salvar</button>
+        </div>
+    </div>
+</form>

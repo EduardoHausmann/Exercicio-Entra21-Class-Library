@@ -40,7 +40,7 @@ namespace View
             contaReceber.Valor = Convert.ToDecimal(mtbValor.Text);
             contaReceber.ValorRecebido = Convert.ToDecimal(mtbValorRecebido.Text);
 
-            ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
+            ContaReceberRepository repositorio = new ContaReceberRepository();
             repositorio.Inserir(contaReceber);
         }
 
@@ -52,7 +52,7 @@ namespace View
             contaReceber.Valor = Convert.ToDecimal(mtbValor.Text);
             contaReceber.ValorRecebido = Convert.ToDecimal(mtbValorRecebido.Text);
 
-            ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
+            ContaReceberRepository repositorio = new ContaReceberRepository();
             repositorio.Alterar(contaReceber);
         }
 
@@ -66,7 +66,7 @@ namespace View
         
         private void AtualizarTabela()
         {
-            ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
+            ContaReceberRepository repositorio = new ContaReceberRepository();
 
             string busca = txtBusca.Text;
             List<ContaReceber> contasReceber = repositorio.ObterTodos(busca);
@@ -104,7 +104,7 @@ namespace View
             if (resultado == DialogResult.Yes)
             {
                 int id = Convert.ToInt32(dgvContaReceber.CurrentRow.Cells[0].Value);
-                ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
+                ContaReceberRepository repositorio = new ContaReceberRepository();
                 repositorio.Apagar(id);
                 AtualizarTabela();
             }
@@ -112,7 +112,7 @@ namespace View
 
         private void dgvContaReceber_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ContaReceberRepositorio repositorio = new ContaReceberRepositorio();
+            ContaReceberRepository repositorio = new ContaReceberRepository();
 
             int id = Convert.ToInt32(dgvContaReceber.CurrentRow.Cells[0].Value);
             ContaReceber contaReceber = repositorio.ObterPeloId(id);

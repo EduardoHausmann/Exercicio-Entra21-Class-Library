@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<title>Lista Conta Pagar</title>
+<h2 class="text-center fw-bolder mt-3 mb-3">Lista de Contas a Pagar</h2>
+
+<div class="row mb-3">
+    <div class="col-12">
+        <a class="btn btn-outline-primary mt-3 mb-3" style="float: right;" href="/contaPagar/Cadastro" id="botao-cadastro"><i class="bi bi-plus-square-dotted"></i> Cadastrar Conta</a>
+    </div>
+</div>
+
+<table class="table table-hover table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+            <th>Ação</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (Model.ContaPagar contaPagar in ViewBag.ContasPagar)
+        {
+        <tr>
+            <td>@contaPagar.Id</td>
+            <td>@contaPagar.Nome</td>
+            <td>@contaPagar.Valor</td>
+            <td>@contaPagar.Tipo</td>
+            <td>
+                <a href="/contaPagar/editar?id=@contaPagar.Id" class="btn btn-outline-primary"><i class="bi bi-pencil"></i> Editar</a>
+                <a href="/contaPagar/apagar?id=@contaPagar.Id" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Apagar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

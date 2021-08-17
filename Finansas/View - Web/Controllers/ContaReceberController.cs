@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,7 +9,8 @@ namespace View___Web.Controllers
 {
     public class ContaReceberController : Controller
     {
-        // GET: ContaReceber
+        ContaReceberRepository repository = new ContaReceberRepository();
+
         public ActionResult Index()
         {
             return View();

@@ -40,7 +40,7 @@ namespace View
             contaPagar.Valor = Convert.ToDecimal(mtbValor.Text);
             contaPagar.Tipo = cbTipo.SelectedItem.ToString();
 
-            ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
+            ContaPagarRepository repositorio = new ContaPagarRepository();
             repositorio.Inserir(contaPagar);
         }
 
@@ -52,7 +52,7 @@ namespace View
             contaPagar.Valor = Convert.ToDecimal(mtbValor.Text);
             contaPagar.Tipo = cbTipo.SelectedItem.ToString();
 
-            ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
+            ContaPagarRepository repositorio = new ContaPagarRepository();
             repositorio.Alterar(contaPagar);
         }
 
@@ -66,7 +66,7 @@ namespace View
 
         public void AtualizarTabela()
         {
-            ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
+            ContaPagarRepository repositorio = new ContaPagarRepository();
             string busca = txtBusca.Text;
             List<ContaPagar> contasPagar = repositorio.ObterTodos(busca);
             dgvContaPagar.RowCount = 0;
@@ -103,7 +103,7 @@ namespace View
             if (resultado == DialogResult.Yes)
             {
                 int id = Convert.ToInt32(dgvContaPagar.CurrentRow.Cells[0].Value);
-                ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
+                ContaPagarRepository repositorio = new ContaPagarRepository();
                 repositorio.Apagar(id);
                 AtualizarTabela();
             }            
@@ -111,7 +111,7 @@ namespace View
 
         private void dgvContaPagar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ContaPagarRepositorio repositorio = new ContaPagarRepositorio();
+            ContaPagarRepository repositorio = new ContaPagarRepository();
 
             int id = Convert.ToInt32(dgvContaPagar.CurrentRow.Cells[0].Value);
             ContaPagar contaPagar = repositorio.ObterPeloId(id);

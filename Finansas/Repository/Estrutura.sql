@@ -1,12 +1,12 @@
-﻿DROP TABLE IF EXISTS contas_pagar;
+﻿DROP TABLE IF EXISTS contas_pagar, contas_receber, clientes;
+
 CREATE TABLE contas_pagar(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
 	valor DECIMAL(5,2),
-	tipo VARCHAR(50)
+	tipo VARCHAR(100)
 );
 
-DROP TABLE IF EXISTS contas_receber;
 CREATE TABLE contas_receber(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
@@ -14,7 +14,6 @@ CREATE TABLE contas_receber(
 	valor_recebido DECIMAL(5,2)
 );
 
-DROP TABLE IF EXISTS clientes;
 CREATE TABLE clientes(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),

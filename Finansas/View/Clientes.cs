@@ -40,7 +40,7 @@ namespace View
             cliente.Cpf = mtbCpf.Text;
             cliente.Rg = mtbRg.Text;
 
-            ClienteRepositorio repositorio = new ClienteRepositorio();
+            ClienteRepository repositorio = new ClienteRepository();
             repositorio.Inserir(cliente);
         }
 
@@ -52,7 +52,7 @@ namespace View
             cliente.Cpf = mtbCpf.Text;
             cliente.Rg = mtbRg.Text;
 
-            ClienteRepositorio repositorio = new ClienteRepositorio();
+            ClienteRepository repositorio = new ClienteRepository();
             repositorio.Alterar(cliente);
         }
 
@@ -66,7 +66,7 @@ namespace View
 
         private void AtualizarTabela()
         {
-            ClienteRepositorio repositorio = new ClienteRepositorio();
+            ClienteRepository repositorio = new ClienteRepository();
             string busca = txtBusca.Text;
 
             List<Cliente> clientes = repositorio.ObterTodos(busca);
@@ -103,7 +103,7 @@ namespace View
             if (resultado == DialogResult.Yes)
             {
                 int id = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value);
-                ClienteRepositorio repositorio = new ClienteRepositorio();
+                ClienteRepository repositorio = new ClienteRepository();
                 repositorio.Apagar(id);
                 AtualizarTabela();
             }
@@ -111,7 +111,7 @@ namespace View
 
         private void dgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ClienteRepositorio repositorio = new ClienteRepositorio();
+            ClienteRepository repositorio = new ClienteRepository();
 
             int id = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value);
             Cliente cliente = repositorio.ObterPeloId(id);

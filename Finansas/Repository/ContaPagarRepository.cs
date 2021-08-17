@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class ContaPagarRepositorio
+    public class ContaPagarRepository
     {
         public string CadeiaConexaoPagar = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\GitHub\Exercicio-Entra21-Class-Library\Finansas\Repository\Database.mdf;Integrated Security=True";
         
@@ -21,7 +21,7 @@ namespace Repository
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"INSERT INTO contas_pagar (nome, valor, tipo) VALUES (@NOME, @VALOR, @TIPO)";
+            comando.CommandText = @"INSERT INTO contas_pagar (nome, valor, tipo) OUTPUT INSERTED.ID VALUES (@NOME, @VALOR, @TIPO)";
             comando.Parameters.AddWithValue("@NOME", contaPagar.Nome);
             comando.Parameters.AddWithValue("@VALOR", contaPagar.Valor);
             comando.Parameters.AddWithValue("@TIPO", contaPagar.Tipo);

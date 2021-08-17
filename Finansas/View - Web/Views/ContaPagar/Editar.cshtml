@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Editar";
+}
+
+<title>Editar Conta Pagar</title>
+<h2 class="text-center fw-bolder mt-3 mb-3">Edição de Conta a Pagar</h2>
+
+<form action="/contaPagar/Update" method="post">
+    <input type="hidden" name="id" value="@ViewBag.ContaPagar.Id" />
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-nome">Nome</label>
+                <input type="text" name="nome" id="campo-nome" class="form-control" value="@ViewBag.ContaPagar.Nome" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="campo-valor">Valor</label>
+                <input type="text" name="valor" id="campo-valor" class="form-control" value="@ViewBag.ContaPagar.Valor" />
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group">
+                <label for="campo-tipo">Tipo</label>
+                <select name="tipo" class="form-select">
+                    <option value="Água">Água</option>
+                    <option value="Eletronico">Eletronico</option>
+                    <option value="Estudo">Estudo</option>
+                    <option value="Luz">Luz</option>
+                    <option value="Telefone/Internet">Telefone/Internet</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <button type="submit" class="btn btn-outline-success float-right mt-3 mb-3"><i class="bi bi-save"></i> Salvar</button>
+        </div>
+    </div>
+</form>

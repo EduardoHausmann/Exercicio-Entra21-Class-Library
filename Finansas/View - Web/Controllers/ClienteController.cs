@@ -10,7 +10,7 @@ namespace View___Web.Controllers
 {
     public class ClienteController : Controller
     {
-        ClienteRepositorio repository = new ClienteRepositorio();
+        ClienteRepository repository = new ClienteRepository();
 
         public ActionResult Index()
         {
