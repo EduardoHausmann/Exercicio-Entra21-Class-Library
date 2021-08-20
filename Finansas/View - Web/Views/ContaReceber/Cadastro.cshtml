@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<title>Cadastrar Conta Receber</title>
+<h2 class="text-center fw-bolder mt-3 mb-3">Cadastro de Conta a Receber</h2>
+
+<form action="/contaReceber/Store" method="post">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-nome">Nome</label>
+                <input type="text" name="nome" id="campo-nome" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="campo-valor">Valor</label>
+                <input type="text" name="valor" id="campo-valor" class="form-control" />
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group">
+                <label for="campo-valorRecebido">Valor Recebido</label>
+                <input type="text" name="valorRecebido" id="campo-valorRecebido" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+        <div>
+            <div>
+                <button type="submit" class="btn btn-outline-success floar-right mt-3 mb-3"><i class="bi bi-save"></i> Salvar</button>
+            </div>
+        </div>
+</form>
