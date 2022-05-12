@@ -2,12 +2,6 @@
 using Repository;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View
@@ -106,7 +100,7 @@ namespace View
                 ContaPagarRepository repositorio = new ContaPagarRepository();
                 repositorio.Apagar(id);
                 AtualizarTabela();
-            }            
+            }
         }
 
         private void dgvContaPagar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

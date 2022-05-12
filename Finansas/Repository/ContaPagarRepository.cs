@@ -3,16 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repository
 {
     public class ContaPagarRepository
     {
         public string CadeiaConexaoPagar = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Eduardo\Documents\GitHub\Exercicio-Entra21-Class-Library\Finansas\Repository\Database.mdf;Integrated Security=True";
-        
+
         public int Inserir(ContaPagar contaPagar)
         {
             SqlConnection conexao = new SqlConnection();
